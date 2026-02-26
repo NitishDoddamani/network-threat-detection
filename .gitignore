@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+*.pkl
+ml/models/
+node_modules/
+frontend/build/
+.env
+*.egg-info/

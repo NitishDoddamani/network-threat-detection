@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+sqlalchemy
+psycopg2-binary
+redis
+kafka-python
+websockets
+pydantic
+pydantic-settings
+python-dotenv
+scapy
+pandas
+numpy
+scikit-learn
+joblib
