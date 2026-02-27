@@ -117,7 +117,6 @@ def detect_threats(features, dst_port=None, protocol=None, dns_payload=0):
 
 
 def process_packet(pkt):
-    """Called for every captured packet"""
     if not pkt.haslayer(IP):
         return
 
@@ -140,32 +139,49 @@ def process_packet(pkt):
         dst_port = pkt[UDP].dport
         protocol = "UDP"
 
-    # DNS tunneling check
     if pkt.haslayer(DNS) and pkt.haslayer(DNSQR):
         dns_payload = len(pkt[DNSQR].qname)
 
-    # Update flow tracker
     tracker.update(src_ip, dst_ip, src_port, dst_port, payload_len, flags)
     features = tracker.get_features(src_ip)
 
-    # Detect threats (rule-based + ML)
+    # ── Check cooldown before alerting ──
+    if not tracker.should_alert(src_ip, cooldown_seconds=30):
+        return
+
     threats = detect_threats(features, dst_port, protocol, dns_payload)
 
-    for threat in threats:
-        # ── Enrich with MITRE ATT&CK ──
-        threat = enrich_threat(threat)
+    # ── ML only if no rule triggered AND min packets seen ──
+    if not threats and features["packet_count"] >= 20:
+        if detector and detector.loaded:
+            ml_result = detector.predict(features)
+            # Stricter threshold — only HIGH confidence anomalies
+            if ml_result["is_anomaly"] and ml_result["anomaly_score"] < -0.25:
+                threats.append({
+                    "threat_type": "ML Anomaly",
+                    "severity":    "MEDIUM",
+                    "src_ip":      src_ip,
+                    "dst_ip":      dst_ip,
+                    "src_port":    src_port,
+                    "dst_port":    dst_port,
+                    "protocol":    protocol,
+                    "packet_count":features["packet_count"],
+                    "description": f"ML anomaly | score: {ml_result['anomaly_score']} | confidence: {ml_result['confidence']}",
+                    "raw_features":features,
+                })
 
+    for threat in threats:
+        threat = enrich_threat(threat)
         print(f"🚨 THREAT: {threat['threat_type']} | {threat['severity']} | {src_ip} | {threat['mitre_technique_id']}")
 
-        # Auto response
         response = handle_threat(threat)
         if response and response.get("status") == "blocked":
             print(f"🚫 AUTO-BLOCKED: {src_ip}")
-        elif response and response.get("status") == "skipped":
-            print(f"⚠️  SKIPPED: {src_ip} ({response.get('reason')})")
 
         if producer:
             send_threat(producer, KAFKA_TOPIC, threat)
+
+        tracker.mark_alerted(src_ip)
         tracker.reset_ip(src_ip)
 
 def main():

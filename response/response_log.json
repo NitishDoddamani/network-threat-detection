@@ -246,5 +246,501 @@
     "severity": "CRITICAL",
     "description": "DDoS detected: 1000 pkt/s",
     "timestamp": "2026-02-27T04:26:43.438363"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.2.3.100",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:12:33.889458"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.2.4.100",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:12:33.989829"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.2.0.1",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:12:41.570864"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.2.0.254",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:13:05.224662"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.2.4.123",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:13:06.965441"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.2.0.179",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:13:17.816060"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "192.168.3.2",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:13:24.586746"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.2.4.141",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:13:29.595552"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.2.3.175",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:13:43.213416"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.2.2.66",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:14:29.500449"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.2.0.215",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:14:29.805931"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.1.4.212",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:14:38.818990"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.2.4.59",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:14:45.576056"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.2.3.2",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:14:59.195279"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "192.168.3.11",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:15:10.972857"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.14.143.137",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:15:29.827230"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.2.1.233",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:16:06.265858"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.2.0.75",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:16:13.436954"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.1.21.199",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:16:15.791467"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.2.4.88",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:16:20.193079"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.2.3.211",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:16:44.986984"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.2.4.61",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:17:09.345322"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.2.4.133",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:17:36.379843"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.2.3.83",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:17:53.788492"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.252.40.189",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:17:54.810787"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.2.3.15",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:18:33.024645"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.2.4.77",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:19:08.231666"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.14.142.214",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:19:26.969320"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.6.62.76",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:19:31.713533"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.2.3.197",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:20:33.943308"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.2.2.20",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:20:42.954743"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.6.63.67",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:20:47.967570"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.2.2.116",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:20:48.484059"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.2.3.18",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:21:14.595060"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.2.0.70",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:22:51.262258"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.1.4.183",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:22:56.513942"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.2.2.61",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:24:15.025811"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "172.16.84.127",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:25:17.928512"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.2.0.117",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:25:48.620335"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.1.4.122",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:25:54.587853"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.2.1.253",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:26:12.377074"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.2.0.113",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:26:28.145406"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.2.3.56",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:26:55.077376"
+  },
+  {
+    "action": "UNBLOCK",
+    "ip": "10.2.3.100",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "auto/manual unblock",
+    "timestamp": "2026-02-27T06:27:34.001504"
+  },
+  {
+    "action": "UNBLOCK",
+    "ip": "10.2.4.100",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "auto/manual unblock",
+    "timestamp": "2026-02-27T06:27:34.041109"
+  },
+  {
+    "action": "UNBLOCK",
+    "ip": "10.2.0.1",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "auto/manual unblock",
+    "timestamp": "2026-02-27T06:27:41.651169"
+  },
+  {
+    "action": "UNBLOCK",
+    "ip": "10.2.0.254",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "auto/manual unblock",
+    "timestamp": "2026-02-27T06:28:05.307108"
+  },
+  {
+    "action": "UNBLOCK",
+    "ip": "10.2.4.123",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "auto/manual unblock",
+    "timestamp": "2026-02-27T06:28:07.076397"
+  },
+  {
+    "action": "UNBLOCK",
+    "ip": "10.2.0.179",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "auto/manual unblock",
+    "timestamp": "2026-02-27T06:28:17.904375"
+  },
+  {
+    "action": "UNBLOCK",
+    "ip": "192.168.3.2",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "auto/manual unblock",
+    "timestamp": "2026-02-27T06:28:24.699346"
+  },
+  {
+    "action": "UNBLOCK",
+    "ip": "10.2.4.141",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "auto/manual unblock",
+    "timestamp": "2026-02-27T06:28:29.709473"
+  },
+  {
+    "action": "UNBLOCK",
+    "ip": "10.2.3.175",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "auto/manual unblock",
+    "timestamp": "2026-02-27T06:28:43.318070"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.2.0.123",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:28:59.287664"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.2.1.202",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:29:16.819804"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.14.143.64",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:29:28.400261"
+  },
+  {
+    "action": "UNBLOCK",
+    "ip": "10.2.2.66",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "auto/manual unblock",
+    "timestamp": "2026-02-27T06:29:29.617508"
+  },
+  {
+    "action": "UNBLOCK",
+    "ip": "10.2.0.215",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "auto/manual unblock",
+    "timestamp": "2026-02-27T06:29:29.930010"
+  },
+  {
+    "action": "UNBLOCK",
+    "ip": "10.1.4.212",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "auto/manual unblock",
+    "timestamp": "2026-02-27T06:29:38.922407"
+  },
+  {
+    "action": "UNBLOCK",
+    "ip": "10.2.4.59",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "auto/manual unblock",
+    "timestamp": "2026-02-27T06:29:45.648467"
+  },
+  {
+    "action": "UNBLOCK",
+    "ip": "10.2.3.2",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "auto/manual unblock",
+    "timestamp": "2026-02-27T06:29:59.310092"
+  },
+  {
+    "action": "BLOCK",
+    "ip": "10.2.4.56",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "DDoS detected: 1000 pkt/s",
+    "timestamp": "2026-02-27T06:30:05.951523"
+  },
+  {
+    "action": "UNBLOCK",
+    "ip": "192.168.3.11",
+    "threat_type": "DDoS",
+    "severity": "CRITICAL",
+    "description": "auto/manual unblock",
+    "timestamp": "2026-02-27T06:30:11.090261"
   }
 ]
