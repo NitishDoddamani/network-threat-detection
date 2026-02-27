@@ -1,0 +1,42 @@
+[
+  {
+    "version": 2,
+    "timestamp": "2026-02-27T06:51:38.045761",
+    "threat_samples": 64,
+    "normal_samples": 5000,
+    "threat_detection_rate": 1.0,
+    "new_samples_added": 64
+  },
+  {
+    "version": 3,
+    "timestamp": "2026-02-27T06:56:38.659223",
+    "threat_samples": 97,
+    "normal_samples": 5000,
+    "threat_detection_rate": 0.9896907216494846,
+    "new_samples_added": 33
+  },
+  {
+    "version": 4,
+    "timestamp": "2026-02-27T07:01:39.534449",
+    "threat_samples": 129,
+    "normal_samples": 5000,
+    "threat_detection_rate": 0.9844961240310077,
+    "new_samples_added": 32
+  },
+  {
+    "version": 5,
+    "timestamp": "2026-02-27T07:06:40.178585",
+    "threat_samples": 209,
+    "normal_samples": 5000,
+    "threat_detection_rate": 0.9952153110047847,
+    "new_samples_added": 80
+  },
+  {
+    "version": 6,
+    "timestamp": "2026-02-27T07:12:33.903930",
+    "threat_samples": 440,
+    "normal_samples": 5000,
+    "threat_detection_rate": 0.9863636363636363,
+    "new_samples_added": 227
+  }
+]

@@ -15,6 +15,7 @@ from kafka_producer import create_producer, send_threat
 from ml.detector import MLDetector
 from response.auto_response import handle_threat 
 from response.mitre_mapping import enrich_threat
+from ml.adaptive_trainer import adaptive_trainer
 
 # ── CONFIG ──
 KAFKA_SERVERS   = "localhost:9092"
@@ -174,6 +175,9 @@ def process_packet(pkt):
         threat = enrich_threat(threat)
         print(f"🚨 THREAT: {threat['threat_type']} | {threat['severity']} | {src_ip} | {threat['mitre_technique_id']}")
 
+        # ── Feed to adaptive trainer ──
+        adaptive_trainer.add_threat_sample(threat)
+
         response = handle_threat(threat)
         if response and response.get("status") == "blocked":
             print(f"🚫 AUTO-BLOCKED: {src_ip}")
@@ -183,7 +187,8 @@ def process_packet(pkt):
 
         tracker.mark_alerted(src_ip)
         tracker.reset_ip(src_ip)
-
+        
+        
 def main():
     global producer, detector
 
@@ -192,6 +197,9 @@ def main():
     # Load ML model
     print("🤖 Loading ML anomaly detection model...")
     detector = MLDetector(model_dir="/home/nitish/network-threat-detection/ml/models")
+    
+    adaptive_trainer.start_auto_retrain()
+    print("🔄 Adaptive learning engine started!")
 
     # Connect to Kafka
     print("⚡ Connecting to Kafka...")
