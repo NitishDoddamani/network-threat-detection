@@ -236,3 +236,26 @@ body {
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .dashboard  { padding: 16px; }
 }
+
+.mitre-badge {
+  font-size: 0.72rem;
+  background: rgba(59,130,246,0.15);
+  color: #3b82f6;
+  border: 1px solid rgba(59,130,246,0.3);
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-family: monospace;
+  font-weight: 700;
+  width: fit-content;
+}
+
+.mitre-badge:hover {
+  background: rgba(59,130,246,0.3);
+}
+
+.alert-mitre-name {
+  font-size: 0.75rem;
+  color: #3b82f6;
+  margin-top: 2px;
+}

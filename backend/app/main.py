@@ -4,7 +4,7 @@ import asyncio
 import threading
 
 from app.database import Base, engine
-from app.routers import alerts
+from app.routers import alerts, response
 from app.websocket_manager import manager
 from app.kafka_consumer import start_kafka_consumer
 
@@ -21,6 +21,7 @@ app.add_middleware(
 )
 
 app.include_router(alerts.router)
+app.include_router(response.router)
 
 @app.on_event("startup")
 async def startup_event():

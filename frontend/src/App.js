@@ -281,10 +281,27 @@ function AlertRow({ alert, detailed }) {
       <div className="alert-row-left">
         <span className="alert-type">{alert.threat_type}</span>
         <span className="alert-severity" style={{ color }}>{alert.severity}</span>
+        {alert.mitre_technique_id && (
+          <a
+            href={alert.mitre_url}
+            target="_blank"
+            rel="noreferrer"
+            className="mitre-badge"
+          >
+            {alert.mitre_technique_id}
+          </a>
+        )}
       </div>
       <div className="alert-row-mid">
         <span className="alert-ip">📍 {alert.src_ip || "Unknown"}</span>
-        {detailed && <span className="alert-desc">{alert.description}</span>}
+        {detailed && (
+          <>
+            <span className="alert-desc">{alert.description}</span>
+            {alert.mitre_technique_name && (
+              <span className="alert-mitre-name">🎯 {alert.mitre_technique_name} · {alert.mitre_tactic}</span>
+            )}
+          </>
+        )}
       </div>
       <div className="alert-row-right">
         <span className="alert-proto">{alert.protocol}</span>

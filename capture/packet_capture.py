@@ -13,6 +13,8 @@ from scapy.all import sniff, IP, TCP, UDP, DNS, DNSQR
 from feature_extractor import FlowTracker
 from kafka_producer import create_producer, send_threat
 from ml.detector import MLDetector
+from response.auto_response import handle_threat 
+from response.mitre_mapping import enrich_threat
 
 # ── CONFIG ──
 KAFKA_SERVERS   = "localhost:9092"
@@ -21,9 +23,9 @@ INTERFACE       = None   # None = auto-detect
 ANALYSIS_WINDOW = 10     # seconds per analysis window
 
 # ── THRESHOLDS ──
-PORT_SCAN_THRESHOLD   = 15    # unique ports in window
-DDOS_PKT_THRESHOLD    = 1000  # packets/sec
-BRUTE_FORCE_THRESHOLD = 20    # syn packets to same port
+PORT_SCAN_THRESHOLD   = 15    # unique ports
+DDOS_PKT_THRESHOLD    = 500   # packets/sec  
+BRUTE_FORCE_THRESHOLD = 20    # SYN packets
 DNS_PAYLOAD_THRESHOLD = 200   # bytes
 
 tracker  = FlowTracker()
@@ -150,11 +152,21 @@ def process_packet(pkt):
     threats = detect_threats(features, dst_port, protocol, dns_payload)
 
     for threat in threats:
-        print(f"🚨 THREAT: {threat['threat_type']} | {threat['severity']} | {src_ip}")
+        # ── Enrich with MITRE ATT&CK ──
+        threat = enrich_threat(threat)
+
+        print(f"🚨 THREAT: {threat['threat_type']} | {threat['severity']} | {src_ip} | {threat['mitre_technique_id']}")
+
+        # Auto response
+        response = handle_threat(threat)
+        if response and response.get("status") == "blocked":
+            print(f"🚫 AUTO-BLOCKED: {src_ip}")
+        elif response and response.get("status") == "skipped":
+            print(f"⚠️  SKIPPED: {src_ip} ({response.get('reason')})")
+
         if producer:
             send_threat(producer, KAFKA_TOPIC, threat)
         tracker.reset_ip(src_ip)
-
 
 def main():
     global producer, detector
