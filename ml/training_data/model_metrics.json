@@ -94,5 +94,13 @@
     "normal_samples": 5000,
     "threat_detection_rate": 0.9898734177215189,
     "new_samples_added": 98
+  },
+  {
+    "version": 14,
+    "timestamp": "2026-02-28T07:05:34.645059",
+    "threat_samples": 1360,
+    "normal_samples": 5000,
+    "threat_detection_rate": 0.9882352941176471,
+    "new_samples_added": 91
   }
 ]

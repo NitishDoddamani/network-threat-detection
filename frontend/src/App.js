@@ -23,17 +23,25 @@ export default function App() {
   const [trafficData, setTrafficData] = useState([]);
   const [activeTab, setActiveTab]   = useState("dashboard");
   const [filter, setFilter]         = useState("ALL");
+  const [mlMetrics, setMlMetrics] = useState(null);
   const wsRef     = useRef(null);
   const alertsRef = useRef(alerts);
   alertsRef.current = alerts;
 
   // ── Load initial alerts + summary ──
-  useEffect(() => {
-    fetchAlerts();
-    fetchSummary();
-    connectWebSocket();
-    return () => wsRef.current?.close();
-  }, []);
+useEffect(() => {
+  fetchAlerts();
+  fetchSummary();
+  fetchMlMetrics();
+  connectWebSocket();
+
+  const metricsInterval = setInterval(fetchMlMetrics, 30000);
+
+  return () => {
+    wsRef.current?.close();
+    clearInterval(metricsInterval);
+  };
+}, []);
 
   const fetchAlerts = async () => {
     try {
@@ -96,6 +104,15 @@ export default function App() {
       ws.close();
     };
   };
+  
+  const fetchMlMetrics = async () => {
+  try {
+    const res = await axios.get(`${API}/stats/ml-metrics`);
+    setMlMetrics(res.data);
+  } catch (err) {
+    console.error("Failed to fetch ML metrics");
+  }
+};
 
   // Filter alerts
   const filteredAlerts = filter === "ALL"
@@ -163,6 +180,59 @@ export default function App() {
               <div className="stat-label">Medium</div>
             </div>
           </div>
+	   
+	   {/* ML Model Status */}
+{mlMetrics && (
+  <div className="ml-card">
+    <div className="ml-header">
+      <h3 className="chart-title">🤖 Adaptive ML Model</h3>
+      <span className="ml-version">v{mlMetrics.current_version}</span>
+    </div>
+    <div className="ml-stats">
+      <div className="ml-stat">
+        <div className="ml-stat-number">{mlMetrics.threat_samples}</div>
+        <div className="ml-stat-label">Threat Samples</div>
+      </div>
+      <div className="ml-stat">
+        <div className="ml-stat-number">
+          {mlMetrics.retraining_history?.length > 0
+            ? `${(mlMetrics.retraining_history.at(-1).threat_detection_rate * 100).toFixed(1)}%`
+            : "N/A"}
+        </div>
+        <div className="ml-stat-label">Detection Rate</div>
+      </div>
+      <div className="ml-stat">
+        <div className="ml-stat-number">{mlMetrics.retraining_history?.length || 0}</div>
+        <div className="ml-stat-label">Retrains</div>
+      </div>
+      <div className="ml-stat">
+        <div className="ml-stat-number">{mlMetrics.next_retrain_in}</div>
+        <div className="ml-stat-label">Samples to Retrain</div>
+      </div>
+    </div>
+    {/* Retraining history */}
+    {mlMetrics.retraining_history?.length > 0 && (
+      <div className="ml-history">
+        <div className="ml-history-title">Retraining History</div>
+        {mlMetrics.retraining_history.slice(-4).map((h, i) => (
+          <div key={i} className="ml-history-row">
+            <span className="ml-hist-version">v{h.version}</span>
+            <div className="ml-hist-bar-wrap">
+              <div
+                className="ml-hist-bar"
+                style={{ width: `${h.threat_detection_rate * 100}%` }}
+              />
+            </div>
+            <span className="ml-hist-rate">
+              {(h.threat_detection_rate * 100).toFixed(1)}%
+            </span>
+            <span className="ml-hist-samples">{h.threat_samples} samples</span>
+          </div>
+        ))}
+      </div>
+    )}
+  </div>
+)}
 
           {/* Charts Row */}
           <div className="charts-row">
